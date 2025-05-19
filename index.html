@@ -50,66 +50,96 @@
       color: #00bfff;
       text-decoration: none;
     }
+    #order-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: #00bfff;
+      color: black;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 10px;
+      cursor: pointer;
+      z-index: 1000;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
+
+  <div style="position: fixed; top: 20px; right: 20px; z-index: 1000; display: flex; gap: 10px;">
+    <a href="https://www.tiktok.com/@sscriptifyy?_t=ZP-8wTgWEAtAFj&_r=1" target="_blank">
+      <img src="tiktok_icon.png" alt="TikTok" style="width: 32px; height: 32px; border-radius: 50%;">
+    </a>
+    <a href="https://discord.gg/VzW9EqkMsC" target="_blank">
+      <img src="discord_icon.png" alt="Discord" style="width: 32px; height: 32px; border-radius: 50%;">
+    </a>
+  </div>
+    <a href="https://www.tiktok.com/@sscriptifyy?_t=ZP-8wTgWEAtAFj&_r=1" target="_blank" style="margin-right: 10px; font-size: 24px;">🎵</a>
+    <a href="https://discord.gg/VzW9EqkMsC" target="_blank" style="font-size: 24px;">💬</a>
+  </div>
+
+  <button id="order-button">Click here to get order ID</button>
+
   <a class="card" href="https://cash.app/$tb35472" target="_blank">
     <div class="title">🛒 Spotify Premium</div>
     <div class="price">$15</div>
-  </div>
+  </a>
   <a class="card" href="https://cash.app/$tb35472" target="_blank">
     <div class="title">🛒 Discord Nitro (1 Year)</div>
     <div class="price">$22</div>
-  </div>
+  </a>
   <a class="card" href="https://cash.app/$tb35472" target="_blank">
     <div class="title">🛒 Tha Bronx 3 File (Outdated)</div>
     <div class="price">$5</div>
-  </div>
+  </a>
+  <a class="card" href="https://cash.app/$tb35472" target="_blank">
+    <div class="title">🛒 Tha Bronx 3 (Max Money)</div>
+    <div class="price">$3</div>
+  </a>
   <a class="card" href="https://cash.app/$tb35472" target="_blank">
     <div class="title">🛒 3 Months Nitro with 2 Boosts</div>
     <div class="price">$5</div>
   </a>
 
-  
-<div class="footer">
-  🛒 👉 <a href="https://discord.gg/MBGpT3SNZj" target="_blank">Click here to join Discord</a> to buy!<br />
-  🎟️ When you send money, make a ticket in Discord with a screenshot 📸 that you sent 💸 — staff will get to you ASAP! ⚡👨‍💻<br />
-  🚀 Get the best deals now!
-</div>
+  <div class="footer">
+    🛒 👉 <a href="https://discord.gg/VzW9EqkMsC" target="_blank">Click here to join Discord</a> to buy!<br />
+    🎟️ Make a ticket in Discord to purchase.<br />🆔 You will need to send your order ID in your Discord ticket!<br />
+    🚀 Get the best deals now!
+  </div>
 
+  <audio id="bg-audio" hidden>
+    <source src="cafuné - tek it (muffled transition) [tiktok vers.].mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <button id="audio-toggle" style="position:fixed; bottom:20px; right:20px; padding:10px; border-radius:10px; background:#222; color:white; border:none; cursor:pointer; z-index:1000;">🔊 Sound On/Off</button>
 
-  
+  <script>
+    const audio = document.getElementById('bg-audio');
+    const toggle = document.getElementById('audio-toggle');
+    let hasPlayed = false;
 
-  
-
-<audio id="bg-audio" hidden>
-  <source src="cafuné - tek it (muffled transition) [tiktok vers.].mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-<button id="audio-toggle" style="position:fixed; bottom:20px; right:20px; padding:10px; border-radius:10px; background:#222; color:white; border:none; cursor:pointer; z-index:1000;">🔊 Sound On/Off</button>
-<script>
-  const audio = document.getElementById('bg-audio');
-  const toggle = document.getElementById('audio-toggle');
-  let hasPlayed = false;
-
-  function toggleAudio() {
-    if (audio.paused) {
-      audio.play().catch(() => {});
-    } else {
-      audio.pause();
+    function toggleAudio() {
+      if (audio.paused) {
+        audio.play().catch(() => {});
+      } else {
+        audio.pause();
+      }
     }
-  }
 
-  toggle.addEventListener('click', toggleAudio);
+    toggle.addEventListener('click', toggleAudio);
 
-  // Auto-play on first user interaction
-  window.addEventListener('click', () => {
-    if (!hasPlayed) {
-      audio.play().catch(() => {});
-      hasPlayed = true;
-    }
-  }, { once: true });
-</script>
+    window.addEventListener('click', () => {
+      if (!hasPlayed) {
+        audio.play().catch(() => {});
+        hasPlayed = true;
+      }
+    }, { once: true });
+
+    document.getElementById('order-button').addEventListener('click', () => {
+      const randomID = Math.floor(100 + Math.random() * 900);
+      alert("Order ID: " + randomID);
+    });
+  </script>
 </body>
-
 </html>
