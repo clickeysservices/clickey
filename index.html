@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Private Deals</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      color: white;
+      background: url('standard.gif') center/cover no-repeat fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      backdrop-filter: blur(4px);
+      background-color: rgba(0, 0, 0, 0.4);
+      padding-top: 40px;
+    }
+    .card {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 15px;
+      margin: 10px;
+      width: 250px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.8);
+    }
+    .title {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+    .price {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .footer {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 1rem;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 15px;
+      border-radius: 15px;
+      max-width: 90%;
+    }
+    a {
+      color: #00bfff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <a class="card" href="https://cash.app/$tb35472" target="_blank">
+    <div class="title">🛒 Spotify Premium</div>
+    <div class="price">$15</div>
+  </div>
+  <a class="card" href="https://cash.app/$tb35472" target="_blank">
+    <div class="title">🛒 Discord Nitro (1 Year)</div>
+    <div class="price">$22</div>
+  </div>
+  <a class="card" href="https://cash.app/$tb35472" target="_blank">
+    <div class="title">🛒 Tha Bronx 3 File (Outdated)</div>
+    <div class="price">$5</div>
+  </div>
+  <a class="card" href="https://cash.app/$tb35472" target="_blank">
+    <div class="title">🛒 3 Months Nitro with 2 Boosts</div>
+    <div class="price">$5</div>
+  </a>
+
+  
+<div class="footer">
+  🛒 👉 <a href="https://discord.gg/MBGpT3SNZj" target="_blank">Click here to join Discord</a> to buy!<br />
+  🎟️ When you send money, make a ticket in Discord with a screenshot 📸 that you sent 💸 — staff will get to you ASAP! ⚡👨‍💻<br />
+  🚀 Get the best deals now!
+</div>
+
+
+  
+
+  
+
+<audio id="bg-audio" hidden>
+  <source src="cafuné - tek it (muffled transition) [tiktok vers.].mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<button id="audio-toggle" style="position:fixed; bottom:20px; right:20px; padding:10px; border-radius:10px; background:#222; color:white; border:none; cursor:pointer; z-index:1000;">🔊 Sound On/Off</button>
+<script>
+  const audio = document.getElementById('bg-audio');
+  const toggle = document.getElementById('audio-toggle');
+  let hasPlayed = false;
+
+  function toggleAudio() {
+    if (audio.paused) {
+      audio.play().catch(() => {});
+    } else {
+      audio.pause();
+    }
+  }
+
+  toggle.addEventListener('click', toggleAudio);
+
+  // Auto-play on first user interaction
+  window.addEventListener('click', () => {
+    if (!hasPlayed) {
+      audio.play().catch(() => {});
+      hasPlayed = true;
+    }
+  }, { once: true });
+</script>
+</body>
+
+</html>
